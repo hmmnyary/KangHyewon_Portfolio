@@ -505,7 +505,7 @@ body {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-63%);
+        transform: translateY(-63.5%);
     }
 }
 
