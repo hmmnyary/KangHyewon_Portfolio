@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강혜원 포트폴리오</title>
+    <link rel="stylesheet" href="lib/fullpage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="lib/jquery-ui.min.js"></script>
+    <script src="lib/fullpage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+    <script>
+        $(function () {
+
+            //인트로 슬라이드 전환
+            $('.loading .text').animate({
+                top: '288px'
+            }, 200, 'easeOutCirc', function () {
+                $('.loading .title1').animate({
+                    top: '415px'
+                }, 200, 'easeOutCirc', function () {
+                    $('.loading .title2').animate({
+                        top: '415px'
+                    }, 200, 'easeOutCirc', function () {
+                        $('.loading .title3').animate({
+                            top: '415px'
+                        }, 200, 'easeOutCirc', function () {
+                            $('.loading .title4').animate({
+                                top: '415px'
+                            }, 200, 'easeOutCirc', function () {
+                                $('.loading .title5').animate({
+                                    top: '415px'
+                                }, 200, 'easeOutCirc', function () {
+                                    $('.loading .title6').animate({
+                                        top: '415px'
+                                    }, 200, 'easeOutCirc', function () {
+                                        $('.loading .title7').animate({
+                                            top: '415px'
+                                        }, 200, 'easeOutCirc', function () {
+                                            $('.loading .title8').animate({
+                                                top: '415px'
+                                            }, 200, 'easeOutCirc', function () {
+                                                $('.loading .title9').animate({
+                                                    top: '415px'
+                                                }, 900, 'easeOutBounce', function () {
+                                                    $('.loading').slideUp()
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                })
+            });//animate
+
+            setInterval(() => {
+                $('.scroll_down span').toggleClass('on');
+            }, 800);
+
+
+            let menu = $('.gnb li');
+            menu.click(function () {
+                menu.removeClass('on');
+                $(this).addClass('on');
+            });
+
+            let body = document.querySelector('body');
+            let modeBtn = document.querySelector('.mode');
+            let modeImage = modeBtn.querySelector('img')
+            let web = document.querySelector('.web');
+            let graphic = document.querySelector('.graphic');
+
+            modeBtn.addEventListener('click', () => {
+                if (getComputedStyle(body).backgroundColor === 'rgb(255, 255, 255)') {
+                    body.style.backgroundColor = '#333';
+                    body.style.color = '#fff';
+                    modeBtn.style.backgroundColor = '#fff';
+                    modeImage.src = 'img/icon_sun_333.svg';
+                    modeImage.classList.add('on');
+                    web.style.background = 'url(img/grain_bgfff_top.png) center center / cover no-repeat';
+                    web.classList.add('on');
+                    graphic.style.background = 'url(img/grain_bgfff_center.png) center center / cover no-repeat';
+                } else {
+                    body.style.backgroundColor = '#fff';
+                    body.style.color = '#333';
+                    modeBtn.style.backgroundColor = '#333';
+                    modeImage.src = 'img/icon_moon_fff.svg';
+                    modeImage.classList.remove('on');
+                    web.style.background = 'url(img/grain_bg_top.png) center center / cover no-repeat';
+                    web.classList.remove('on');
+                    graphic.style.background = 'url(img/grain_bg_center.png) center center / cover no-repeat';
+                }
+            });
+
+            //풀페이지
+            var myFullpage = new fullpage('#fullpage', {
+                anchors: ['home', 'about', 'web_design', 'graphic_design', 'contact'],
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['HOME', 'ABOUT', 'WEB DESIGN', 'GRAPHIC DESIGN', 'CONTACT'],
+                showActiveTooltip: true,
+                afterLoad: function (origin, destination) {
+                    if (destination.index == 0) {
+                        menu.removeClass('on');
+                    } else if (destination.index == 1) {
+                        menu.removeClass('on');
+                        menu.eq(0).addClass('on');
+                    } else if (destination.index == 2) {
+                        menu.removeClass('on');
+                        menu.eq(1).addClass('on');
+                    } else if (destination.index == 3) {
+                        menu.removeClass('on');
+                        menu.eq(2).addClass('on');
+                    } else if (destination.index == 4) {
+                        menu.removeClass('on');
+                        menu.eq(3).addClass('on');
+                    } else if (destination.index == 5) {
+                        menu.removeClass('on');
+                        menu.eq(4).addClass('on');
+                    }
+                }
+            });
+
+
+            //swiper
+            let swiperSildes = document.querySelectorAll('.swiper');
+
+            swiperSildes.forEach(function (element, index) {
+                element.classList.add('swiper-' + index);
+                let swiper = new Swiper('.swiper-' + index, {
+                    autoplay: {
+                        desableOnInercation: false,
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    slidesPerView: 'auto',
+                    //spaceBetween: 30,
+                    speed: 1500,
+                    loop: true,
+                    freemode: true,
+                    centeredSlides: true,
+                });
+            });
+
+
+            //팬시박스
+            Fancybox.bind("[data-fancybox]", {
+            });
+
+        });//script end
+    </script>
+</head>
+
+<body>
+    <div class="loading">
+        <div class="inner">
+            <ul class="text">
+                <li>KANG HYEWON’s</li>
+                <li>Web Design Publishing</li>
+            </ul><!-- .text end -->
+            <div class="drop">
+                <ul class="title">
+                    <li class="title1">P</li>
+                    <li class="title2">o</li>
+                    <li class="title3">r</li>
+                    <li class="title4">t</li>
+                    <li class="title5">f</li>
+                    <li class="title6">o</li>
+                    <li class="title7">l</li>
+                    <li class="title8">i</li>
+                    <li class="title9">o</li>
+                </ul><!-- .title end -->
+            </div><!-- .drop end -->
+        </div><!-- .inner end -->
+    </div><!-- .loading end -->
+
+    <header class="header">
+        <div class="inner">
+            <h1 class="logo">
+                <a href="#home">KANG HYEWON</a>
+            </h1><!-- .logo end -->
+            <nav class="nav">
+                <ul class="gnb">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#web_design">Web Design</a></li>
+                    <li><a href="#graphic_design">Graphic Design</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul><!-- .gnb end -->
+            </nav><!-- .nav end -->
+        </div><!-- .inner end -->
+    </header><!-- .header end -->
+
+    <button class="mode">
+        <img src="img/icon_moon_fff.svg" alt="다크모드 전환" />
+    </button><!-- .mode end -->
+
+    <div id="fullpage">
+        <div class="section main_visual">
+            <div class="inner">
+                <ul class="text">
+                    <li>KANG HYEWON’s</li>
+                    <li>Web Design Publishing</li>
+                </ul><!-- .text end -->
+                <ul class="title">
+                    <li class="title1">P</li>
+                    <li class="title2">o</li>
+                    <li class="title3">r</li>
+                    <li class="title4">t</li>
+                    <li class="title5">f</li>
+                    <li class="title6">o</li>
+                    <li class="title7">l</li>
+                    <li class="title8">i</li>
+                    <li class="title9">o</li>
+                </ul><!-- .title end -->
+                <div class="scroll_down">
+                    <span>SCROLL DOWN</span>
+                </div><!-- .scroll_down end -->
+            </div><!-- .inner end -->
+        </div><!-- .main_visual end -->
+
+        <div class="section about">
+            <div class="inner">
+                <figure>
+                    <img src="img/about_profile.jpg" alt="프로필 사진" />
+                </figure>
+                <div class="text_wrap">
+                    <div class="profile">
+                        <h2>PROFILE</h2>
+                        <div class="profile_wrap">
+                            <div class="sub_title">
+                                <p>NAME</p>
+                                <p>BIRTH</p>
+                                <p>PHONE</p>
+                                <p>E-MAIL</p>
+                            </div>
+                            <div>
+                                <p>강혜원</p>
+                                <p>1997. 11. 28</p>
+                                <p>010-5719-0772</p>
+                                <p>kanghyewon128@gmail.com</p>
+                            </div>
+                        </div><!-- .profile_wrap end -->
+                    </div><!-- .porfile end -->
+
+                    <div class="education">
+                        <h2>EDUCATION</h2>
+                        <div class="education_wrap">
+                            <div class="date">
+                                <p>2024. 04</p>
+                                <p>2021. 02</p>
+                            </div><!-- .date end -->
+                            <div>
+                                <p>그린컴퓨터아카데미 UI/UX 반응형 웹디자인 & 웹퍼블리셔 양성과정 수료</p>
+                                <p>울산대학교 서양화전공 졸업</p>
+                            </div>
+                        </div><!-- education_wrap end -->
+                    </div><!-- .education end -->
+                    <div class="skill">
+                        <h2>SKILL</h2>
+                        <div class="icon_wrap">
+                            <figure>
+                                <img src="img/icon_HTML.svg" alt="html" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_CSS.svg" alt="CSS" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_JavaScript.svg" alt="JavaScript" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_jQuery.svg" alt="jQuery" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_Git.svg" alt="Git" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_GitHub.svg" alt="GitHub" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_Figma.svg" alt="Figma" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_Photoshop.svg" alt="Photoshop" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_Illustrator.svg" alt="Illustrator" />
+                            </figure>
+                            <figure>
+                                <img src="img/icon_PremierePro.svg" alt="premierepro" />
+                            </figure>
+                        </div><!-- .icon_wrap -->
+                    </div><!-- .skill end -->
+                </div><!-- .text_wrap end -->
+            </div><!-- .inner end -->
+        </div><!-- .about end -->
+
+        <div class="section web">
+            <div class="inner">
+                <div class="item item1">
+                    <div class="text_wrap">
+                        <h3>포맨트</h3>
+                        <p>포맨트 반응형 메인페이지 리뉴얼</p>
+                        <div class="list">
+                            <ul>
+                                <li>언어</li>
+                                <li>라이브러리</li>
+                                <li>프로그램</li>
+                                <li>기여도</li>
+                            </ul>
+                            <ul>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>jQuery, swiper-slide</li>
+                                <li>Photoshop, Visual Studio Code</li>
+                                <li>기획, 디자인, 퍼블리싱 100%</li>
+                            </ul>
+                        </div><!-- .list end -->
+
+                        <div class="btn_wrap">
+                            <a href="https://hmmnyary.github.io/FORMENT/" target="_blank">WEB SITE</a>
+                            <a href="img/process_forment.pdf" target="_blank">PROCESS</a>
+                        </div><!-- .btn_wrap end -->
+                    </div><!-- .text_wrap end -->
+
+                    <div class="mockup">
+                        <div class="image_box">
+                            <img src="img/mockup_pc_forment.jpg" alt="포맨트 PC">
+                        </div><!-- .image_box end -->
+                        <div class="mockup_mobile">
+                            <div class="image_mobile">
+                                <img src="img/mockup_mobile_forment.jpg" alt="포맨트 모바일">
+                            </div>
+                        </div><!-- .mockup_mobile end -->
+                        <div class="qr">
+                            <img src="img/forment_qr.png" alt="포맨트 바로가기 QR코드"/>
+                        </div><!-- .qr end -->
+                    </div><!-- .mockup end -->
+
+                </div><!-- .item.item1 end -->
+
+                <div class="item item2">
+                    <div class="text_wrap">
+                        <h3>CGV</h3>
+                        <p>CGV 반응형 메인페이지 리뉴얼</p>
+                        <div class="list">
+                            <ul>
+                                <li>언어</li>
+                                <li>라이브러리</li>
+                                <li>프로그램</li>
+                                <li>기여도</li>
+                            </ul>
+                            <ul>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>jQuery, swiper-slide</li>
+                                <li>Figma, Visual Studio Code</li>
+                                <li>기획, 디자인, 퍼블리싱 100%</li>
+                            </ul>
+                        </div><!-- .list end -->
+
+                        <div class="btn_wrap">
+                            <a href="https://hmmnyary.github.io/CGV/" target="_blank">WEB SITE</a>
+                            <a href="hhttps://www.figma.com/design/2aRpn8eX5WMNuCC9zhsFmm/CGV?node-id=0-1&t=tajrjChlqdUz3KKG-1"
+                                target="_blank">Figma</a>
+                            <a href="img/process_cgv.pdf" target="_blank">PROCESS</a>
+                        </div><!-- .btn_wrap end -->
+
+                    </div><!-- .text_wrap end -->
+
+                    <div class="mockup cgv">
+                        <div class="image_box">
+                            <img src="img/mockup_pc_cgv.jpg" alt="CGV PC">
+                        </div><!-- .image_box end -->
+                        <div class="mockup_mobile">
+                            <div class="image_mobile">
+                                <img src="img/mockup_mobile_cgv.jpg" alt="CGV 모바일">
+                            </div>
+                        </div><!-- .mockup_mobile end -->
+                        <div class="qr">
+                            <img src="img/CGV_qr.png" alt="CGV 바로가기 QR코드"/>
+                        </div><!-- .qr end -->
+                    </div><!-- .mockup end -->
+
+                </div><!-- .item.item2 end -->
+
+                <div class="item item3">
+                    <div class="text_wrap">
+                        <h3>문화연필</h3>
+                        <p>문화연필 적응형(PC) 메인페이지 리뉴얼</p>
+                        <div class="list">
+                            <ul>
+                                <li>언어</li>
+                                <li>라이브러리</li>
+                                <li>프로그램</li>
+                                <li>기여도</li>
+                            </ul>
+                            <ul>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>jQuery, swiper-slide, AOS</li>
+                                <li>Figma, Photoshop, Visual Studio Code</li>
+                                <li>기획, 디자인, 퍼블리싱 100%</li>
+                            </ul>
+                        </div><!-- .list end -->
+
+                        <div class="btn_wrap">
+                            <a href="https://hmmnyary.github.io/MUNHWA/" target="_blank">WEB SITE</a>
+                            <a href="https://www.figma.com/design/eKOTsrXzRwknDCiO6z8xI0/%EB%AC%B8%ED%99%94%EC%97%B0%ED%95%84?node-id=0-1&t=tajrjChlqdUz3KKG-1"
+                                target="_blank">Figma</a>
+                            <a href="img/process_munhwa.pdf" target="_blank">PROCESS</a>
+                        </div><!-- .btn_wrap end -->
+
+                    </div><!-- .text_wrap end -->
+
+                    <div class="mockup munhwa">
+                        <div class="image_box">
+                            <img src="img/mockup_pc_munhwa.jpg" alt="문화연필 PC">
+                        </div><!-- .image_box end -->
+                    </div><!-- .mockup end -->
+
+                </div><!-- .item.item3 end -->
+
+                <div class="item item4">
+                    <div class="text_wrap">
+                        <h3>카페베네</h3>
+                        <p>카페베네 적응형(PC) 메인페이지 리뉴얼</p>
+                        <div class="list">
+                            <ul>
+                                <li>언어</li>
+                                <li>라이브러리</li>
+                                <li>프로그램</li>
+                                <li>기여도</li>
+                            </ul>
+                            <ul>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>jQuery, swiper-slide</li>
+                                <li>Photoshop, Visual Studio Code</li>
+                                <li>기획, 디자인, 퍼블리싱 100%</li>
+                            </ul>
+                        </div><!-- .list end -->
+
+                        <div class="btn_wrap">
+                            <a href="#" target="_blank">WEB SITE</a>
+                            <a href="img/process_caffebene.pdf" target="_blank">PROCESS</a>
+                        </div><!-- .btn_wrap end -->
+
+                    </div><!-- .text_wrap end -->
+
+                    <div class="mockup caffebene">
+                        <div class="image_box">
+                            <img src="img/mockup_pc_caffebene.jpg" alt="카페베네 PC">
+                        </div><!-- .image_box end -->
+                    </div><!-- .mockup end -->
+
+                </div><!-- .item.item4 end -->
+
+                <div class="item item5">
+                    <div class="text_wrap">
+                        <h3>퓨리토</h3>
+                        <p>퓨리토 적응형(PC) 메인페이지 모작</p>
+                        <div class="list">
+                            <ul>
+                                <li>언어</li>
+                                <li>라이브러리</li>
+                                <li>프로그램</li>
+                                <li>기여도</li>
+                            </ul>
+                            <ul>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>swiper-slide</li>
+                                <li>Visual Studio Code</li>
+                                <li>퍼블리싱 100%</li>
+                            </ul>
+                        </div><!-- .list end -->
+
+                        <div class="btn_wrap">
+                            <a href="https://hmmnyary.github.io/purito/" target="_blank">WEB SITE</a>
+                        </div><!-- .btn_wrap end -->
+
+                    </div><!-- .text_wrap end -->
+
+                    <div class="mockup purito">
+                        <div class="image_box">
+                            <img src="img/mockup_pc_purito.jpg" alt="퓨리토 PC">
+                        </div><!-- .image_box end -->
+                    </div><!-- .mockup end -->
+
+                </div><!-- .item.item5 end -->
+
+                <div class="item item6">
+                    <div class="text_wrap">
+                        <h3>슬유살롱</h3>
+                        <p>슬유살롱 반응형 메인페이지 모작</p>
+                        <div class="list">
+                            <ul>
+                                <li>언어</li>
+                                <li>라이브러리</li>
+                                <li>프로그램</li>
+                                <li>기여도</li>
+                            </ul>
+                            <ul>
+                                <li>HTML, CSS, JavaScript</li>
+                                <li>jQuery, swiper-slide</li>
+                                <li>Figma, Visual Studio Code</li>
+                                <li>퍼블리싱 100%</li>
+                            </ul>
+                        </div><!-- .list end -->
+
+                        <div class="btn_wrap">
+                            <a href="https://hmmnyary.github.io/Seulyu-salon/" target="_blank">WEB SITE</a>
+                            <a href="https://www.figma.com/design/25VAvVj5DgpKoCAM45CYRh/%EC%8A%AC%EC%9C%A0%EC%82%B4%EB%A1%B1?node-id=0-1&t=tajrjChlqdUz3KKG-1"
+                                target="_blank">FIGMA</a>
+                        </div><!-- .btn_wrap end -->
+
+                    </div><!-- .text_wrap end -->
+
+                    <div class="mockup seulyu">
+                        <div class="image_box">
+                            <img src="img/mockup_pc_seulyu.jpg" alt="슬유살롱 PC">
+                        </div><!-- .image_box end -->
+                        <div class="mockup_mobile">
+                            <div class="image_mobile">
+                                <img src="img/mockup_mobile_seulyu.jpg" alt="슬유살롱 모바일">
+                            </div>
+                        </div><!-- .mockup_mobile end -->
+                        <div class="qr">
+                            <img src="img/seulyu_qr.png" alt="슬유살롱 바로가기 QR코드"/>
+                        </div><!-- .qr end -->
+                    </div><!-- .mockup end -->
+
+                </div><!-- .item.item6 end -->
+
+            </div><!-- .inner end -->
+        </div><!-- .web end -->
+
+        <div class="section graphic">
+            <div class="swiper graphicSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic1.jpg">
+                            <img src="img/graphic1.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic2.jpg">
+                            <img src="img/graphic2.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic3.jpg">
+                            <img src="img/graphic3.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic4.jpg">
+                            <img src="img/graphic4.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic5.jpg">
+                            <img src="img/graphic5.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic6.jpg">
+                            <img src="img/graphic6.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic7.jpg">
+                            <img src="img/graphic7.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic8.jpg">
+                            <img src="img/graphic8.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic9.jpg">
+                            <img src="img/graphic9.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                    <div class="swiper-slide">
+                        <a data-fancybox="gallery" href="img/graphic10.jpg">
+                            <img src="img/graphic10.jpg" alt="그래픽 디자인">
+                        </a>
+                    </div><!-- .swiper-slide end -->
+                </div><!-- .swiper-wrapper end -->
+                <div class="swiper-pagination"></div>
+            </div><!-- .swiper.graphicSwiper end -->
+
+        </div><!-- .graphic end -->
+
+        <div class="section contact">
+            <div class="inner">
+                <div class="btn_wrap">
+                    <a href="tel:+8210-5719-0772">
+                        <img src="img/icon_phone.svg" alt="전화걸기" />
+                    </a>
+                    <a href="mailto:kanghyewon128@gmail.com">
+                        <img src="img/icon_mail.svg" alt="메일 보내기" />
+                    </a>
+                    <a href="https://github.com/hmmnyary" target="_blank">
+                        <img src="img/icon_github_fff.svg" alt="깃허브로 이동" />
+                    </a>
+                </div><!-- .btn_wrap end -->
+                <a href="img/resume_kanghyewon.pdf" download="강혜원_입사지원서">RESUME <img src="img/icon_Download_fff.svg"
+                        alt="이력서 다운받기" /></a>
+                <p>ⓒ 2024 Kang Hyewon. All Rights Reserved.</p>
+            </div><!-- .inner end -->
+        </div><!-- .contact end -->
+
+    </div><!-- #fullpage end -->
+
+</body>
+
+</html>
