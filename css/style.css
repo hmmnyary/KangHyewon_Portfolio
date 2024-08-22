@@ -440,51 +440,11 @@ body {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-81%);
+        transform: translateY(calc(-100% + 431px));
     }
 }
-
-.web .inner .item .mockup.cgv .image_box:hover img {
-    animation: pcSlideCgv 3.5s 1 linear forwards;
-}
-
-@keyframes pcSlideCgv {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-75%);
-    }
-}
-
-.web .inner .item .mockup.munhwa .image_box:hover img {
-    animation: pcSlideMunhwa 3s 1 linear forwards;
-}
-
-@keyframes pcSlideMunhwa {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-73%);
-    }
-}
-
-.web .inner .item .mockup.caffebene .image_box:hover img {
-    animation: pcSlideBene 3.5s 1 linear forwards;
-}
-
-@keyframes pcSlideBene {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-76%);
-    }
-}
-
 .web .inner .item .mockup.purito .image_box:hover img {
-    animation: pcSlidePurito 6.5s 1 linear forwards;
+    animation: pcSlidePurito 8s 1 linear forwards;
 }
 
 @keyframes pcSlidePurito {
@@ -492,20 +452,7 @@ body {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-90%);
-    }
-}
-
-.web .inner .item .mockup.seulyu .image_box:hover img {
-    animation: pcSlideSeulyu 2s 1 linear forwards;
-}
-
-@keyframes pcSlideSeulyu {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-63.5%);
+        transform: translateY(calc(-100% + 431px));
     }
 }
 
@@ -536,31 +483,7 @@ body {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-72.5%);
-    }
-}
-.mockup.cgv .mockup_mobile .image_mobile:hover img {
-    animation: mobileCgv 4s 1 linear forwards;
-}
-
-@keyframes mobileCgv {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-76%);
-    }
-}
-.mockup.seulyu .mockup_mobile .image_mobile:hover img {
-    animation: mobileSeulyu 2.5s 1 linear forwards;
-}
-
-@keyframes mobileSeulyu {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-68.5%);
+        transform: translateY(calc(-100% + 301px));
     }
 }
 .mockup .qr {
