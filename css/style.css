@@ -395,14 +395,11 @@ body {
     transition: 0.3s;
 }
 .web .inner .item .text_wrap .btn_wrap a:first-of-type {
-    border: 2px solid #333;
-    font-weight: 500;
+    background-color: #999;
+    color: #fff;
 }
 .web.on .inner .item .text_wrap .btn_wrap a {
     border: 1px solid #fff;
-}
-.web.on .inner .item .text_wrap .btn_wrap a:first-of-type {
-    border: 2px solid #fff;
 }
 .web .inner .item .text_wrap .btn_wrap a:hover {
     background-color: #333;
