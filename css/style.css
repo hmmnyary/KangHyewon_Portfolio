@@ -64,7 +64,7 @@ body {
     z-index: 101;
 }
 .loading .inner {
-    max-width: 1440px;
+    max-width: 1280px;
     width: calc(100% - 60px);
     margin: 0 auto;
 }
@@ -213,13 +213,13 @@ body {
     right: -99999px !important;
 }
 
-/**************** main_visual  ****************/
+/**************** .main_visual  ****************/
 
 .main_visual .inner {
     height: 100vh;
 }
 .section .inner {
-    max-width: 1440px;
+    max-width: 1280px;
     width: calc(100% - 60px);
     margin: 0 auto;
 }
@@ -262,7 +262,7 @@ body {
 /**************** .about  ****************/
 
 .about .inner {
-    max-width: 1196px;
+    height: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -305,23 +305,21 @@ body {
 }
 .about .inner .text_wrap .skill .icon_wrap figure {
     position: relative;
+    height: 65px;
 }
 .about .inner .text_wrap .skill .icon_wrap figure::after {
     content: '80%';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    font-size: 16px;
+    display: block;
+    font-size: 15px;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
+    width: 100%;
+    text-align: center;
     text-shadow: 0 0 5px rgb(0, 0, 0);
     color: #fff;
     opacity: 0;
     transition: 0.3s;
-
 }
 .about .inner .text_wrap .skill .icon_wrap figure:hover::after {
     opacity: 1;
@@ -355,6 +353,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    max-width: 1280px;
 }
 .web .inner .item {
     display: flex;
@@ -395,8 +394,15 @@ body {
     border: 1px solid #333;
     transition: 0.3s;
 }
+.web .inner .item .text_wrap .btn_wrap a:first-of-type {
+    border: 2px solid #333;
+    font-weight: 500;
+}
 .web.on .inner .item .text_wrap .btn_wrap a {
     border: 1px solid #fff;
+}
+.web.on .inner .item .text_wrap .btn_wrap a:first-of-type {
+    border: 2px solid #fff;
 }
 .web .inner .item .text_wrap .btn_wrap a:hover {
     background-color: #333;
@@ -408,8 +414,8 @@ body {
 }
 .web .inner .item .text_wrap .qr {
     position: absolute;
-    bottom: 0;
-    right: -100px;
+    bottom: -5px;
+    right: -120px;
     width: 80px;
 }
 .web .inner .item .text_wrap .qr img {
@@ -486,11 +492,6 @@ body {
         transform: translateY(calc(-100% + 301px));
     }
 }
-.mockup .qr {
-    position: absolute;
-    bottom: -60px;
-    right: 0;
-}
 
 /**************** .graphic  ****************/
 
@@ -499,7 +500,7 @@ body {
 }
 .graphic .graphicSwiper .swiper-wrapper {
     height: 430px;
-    padding: 20px 0 20px;
+    padding: 40px 0 30px;
 }
 .graphic .graphicSwiper .swiper-slide {
     height: 400px;
@@ -537,11 +538,21 @@ body {
 .graphic .graphicSwiper .swiper-slide > a:hover::after {
     opacity: 1;
 }
+.graphic .graphicSwiper .swiper-slide::before {
+    content: 'Photoshop';
+    position: absolute;
+    right: 5px;
+    top: -22px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+.graphic .graphicSwiper .swiper-slide.Illustrator::before {
+    content: 'Illustrator';
+}
 .graphic .graphicSwiper .swiper-slide > a img {
     height: 100%;
     display: block;
 }
-
 
 .graphic .graphicSwiper .swiper-pagination-bullet-active {
     background-color: rgba(0, 0, 0, 0.5);
