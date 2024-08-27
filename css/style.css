@@ -395,15 +395,15 @@ body {
     transition: 0.3s;
 }
 .web .inner .item .text_wrap .btn_wrap a:first-of-type {
-    background-color: #999;
+    background-color: #333;
     color: #fff;
 }
 .web.on .inner .item .text_wrap .btn_wrap a {
     border: 1px solid #fff;
 }
 .web .inner .item .text_wrap .btn_wrap a:hover {
-    background-color: #333;
-    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 .web.on .inner .item .text_wrap .btn_wrap a:hover {
     background-color: #fff;
