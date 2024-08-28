@@ -581,10 +581,14 @@ body {
 .contact .btn_wrap a {
     transition: 0.3s;
 }
-.contact .inner > a {
+.contact .btn_wrap.pdf {
+    gap: 10px;
+    margin-bottom: 0;
+}
+.contact .btn_wrap.pdf > a {
     border: 1px solid #fff;
     display: block;
-    width: fit-content;
+    width: 120px;
     padding: 10px 13px;
     margin-bottom: 40px;
     transition: 0.3s;
