@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>강혜원 포트폴리오</title>
     <link rel="stylesheet" href="lib/fullpage.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style.css">
 
     <script src="lib/jquery-3.7.1.min.js"></script>
     <script src="lib/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="lib/fullpage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 
     <script>
         $(function () {
@@ -130,6 +130,9 @@
                 }
             });
 
+            //팬시박스
+            Fancybox.bind("[data-fancybox]", {
+            });
 
             //swiper
             let swiperSildes = document.querySelectorAll('.swiper');
@@ -139,6 +142,7 @@
                 let swiper = new Swiper('.swiper-' + index, {
                     autoplay: {
                         desableOnInercation: false,
+                        
                     },
                     pagination: {
                         el: ".swiper-pagination",
@@ -150,11 +154,6 @@
                     freemode: true,
                     centeredSlides: true,
                 });
-            });
-
-
-            //팬시박스
-            Fancybox.bind("[data-fancybox]", {
             });
 
         });//script end
