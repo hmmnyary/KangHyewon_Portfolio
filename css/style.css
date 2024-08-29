@@ -521,7 +521,7 @@ body {
 }
 .graphic .graphicSwiper .swiper-wrapper {
     height: 430px;
-    padding: 40px 0 30px;
+    padding: 40px 0;
 }
 .graphic .graphicSwiper .swiper-slide {
     height: 400px;
@@ -530,13 +530,14 @@ body {
     transition: 0.3s;
     opacity: 0.5;
     margin: 0 20px 0 20px;
+    transform-origin: center center;
 }
 .graphic .graphicSwiper .swiper-slide:hover {
     opacity: 1;
-    transform: scale(105%);
+    transform: scale(107%);
 }
 .graphic .swiper-slide.swiper-slide-active {
-    transform: scale(105%);
+    transform: scale(107%);
     opacity: 1;
 }
 .graphic .graphicSwiper .swiper-slide > a {
