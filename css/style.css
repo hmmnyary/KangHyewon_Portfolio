@@ -203,6 +203,11 @@ body {
     width: 5px;
     background-color: rgba(255, 255, 255, 0.5);
 }
+#fp-nav.on ul li:hover a span, .fp-slidesNav ul li:hover a span {
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+}
 #fp-nav ul li a.active span {
     width: 9px;
     height: 9px;
@@ -270,6 +275,9 @@ body {
     transform: translateX(-50%);
     background: linear-gradient(rgba(0, 0, 0, 0), 60%, rgba(0, 0, 0, 0.5));
     transition: 0.5s ease-out;
+}
+.main_visual .inner .scroll_down.dark span::before {
+    background: linear-gradient(rgba(0, 0, 0, 0), 60%, rgba(255, 255, 255, 0.5));
 }
 .main_visual .inner .scroll_down span.on::before {
     height: 100px;
