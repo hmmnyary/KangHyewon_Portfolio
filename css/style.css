@@ -531,6 +531,7 @@ body {
     opacity: 0.5;
     margin: 0 20px 0 20px;
     transform-origin: center center;
+    overflow: visible;
 }
 .graphic .graphicSwiper .swiper-slide:hover {
     opacity: 1;
@@ -539,6 +540,17 @@ body {
 .graphic .swiper-slide.swiper-slide-active {
     transform: scale(107%);
     opacity: 1;
+}
+.graphic .graphicSwiper .swiper-slide::before {
+    content: 'Photoshop';
+    position: absolute;
+    right: 5px;
+    top: -22px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+.graphic .graphicSwiper .swiper-slide.Illustrator::before {
+    content: 'Illustrator';
 }
 .graphic .graphicSwiper .swiper-slide > a {
     display: block;
@@ -559,17 +571,6 @@ body {
 }
 .graphic .graphicSwiper .swiper-slide > a:hover::after {
     opacity: 1;
-}
-.graphic .graphicSwiper .swiper-slide::before {
-    content: 'Photoshop';
-    position: absolute;
-    right: 5px;
-    top: -22px;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 14px;
-}
-.graphic .graphicSwiper .swiper-slide.Illustrator::before {
-    content: 'Illustrator';
 }
 .graphic .graphicSwiper .swiper-slide > a img {
     height: 100%;
